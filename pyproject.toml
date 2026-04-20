@@ -1,0 +1,22 @@
+[project]
+name = "pac1-py-domain-fit"
+version = "0.1.0"
+description = "Public runtime-focused extract of the BitGN PAC1 Python agent"
+readme = "README.MD"
+requires-python = ">=3.12"
+dependencies = [
+    "connectrpc>=0.9.0",
+    "openai>=2.26.0",
+    "protobuf>=7.34.1",
+    "pyqwest>=0.4.1",
+    "pydantic>=2.12.5",
+    "pyyaml>=6.0.2",
+    "socksio>=1.0.0",
+]
+
+[tool.uv]
+# AICODE-NOTE: generated BitGN harness/PCM Python stubs are vendored in-repo
+# under `bitgn/` so local `uv sync` does not depend on the private Buf index.
+# If the upstream proto changes, refresh those files from a known-good codegen
+# environment or wire a local repo bootstrap from `BITGN_WORK/bitgn/proto`.
+package = false
